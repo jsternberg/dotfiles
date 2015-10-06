@@ -1,0 +1,35 @@
+set ignorecase
+set smartcase
+set incsearch
+set nohlsearch
+
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set softtabstop=2
+set autoindent
+set modeline
+set modelines=5
+set ruler
+set backspace=2
+
+set shell=bash
+
+if has("autocmd")
+  autocmd Filetype markdown setlocal tw=72
+  autocmd Filetype python setlocal ts=4 sts=4 sw=4
+  autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd Filetype java setlocal ts=4 sts=4 sw=4
+  autocmd Filetype rust setlocal ts=4 sts=4 sw=4
+
+  au BufRead,BufNewFile *.jelly set filetype=xml
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  let g:go_fmt_command = "goimports"
+endif
+
+nmap <C-n> :NERDTreeToggle<CR>
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on

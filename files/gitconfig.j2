@@ -1,0 +1,42 @@
+# vim: set noexpandtab:
+[user]
+	name = Jonathan A. Sternberg
+	email = jonathan.sternberg@knewton.com
+[core]
+	editor = vim
+	excludesfile = {{ "~/.gitignore_global" | expanduser }}
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[push]
+	default = simple
+[alias]
+	amend = commit --amend --no-edit
+	brief = !git --no-pager log --decorate -n 25 --graph --oneline
+	cached = diff --cached
+	co = checkout
+	cp = cherry-pick
+	count = !git rev-list --count ${1:-HEAD}
+	edit = commit --amend
+	ff = merge --ff-only
+	fuckit = !git reset --hard HEAD && git clean -df
+	logd = log --decorate
+	ra = rebase --abort
+	rc = rebase --continue
+	reset-author = commit --reset-author --amend --no-edit
+	root = rev-parse --show-toplevel
+	pushf = push --force-with-lease
+	signoff = commit --amend --signoff
+	st = status
+	stat = status
+	tree = log --graph --oneline --decorate
+	undo = reset --hard
+[grep]
+	lineNumber = true
+[merge]
+	defaultToUpstream = true
+[pull]
+	ff = only
+[git-up "rebase"]
+	auto = false
