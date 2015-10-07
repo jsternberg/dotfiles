@@ -13,6 +13,7 @@ set modeline
 set modelines=5
 set ruler
 set backspace=2
+set hidden
 
 set shell=bash
 
