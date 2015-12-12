@@ -59,6 +59,12 @@
         dest: ~/.gitignore_global
         backup: yes
 
+    - name: create ~/go/bin directory
+      file:
+        path: ~/go/bin
+        recurse: yes
+        state: directory
+
     - name: create ~/.config/fish directory
       file:
         path: ~/.config/fish
