@@ -1,7 +1,7 @@
 # vim: set noexpandtab:
 [user]
 	name = Jonathan A. Sternberg
-	email = jonathan.sternberg@knewton.com
+	email = jonathan@influxdb.com
 [core]
 	editor = vim
 	excludesfile = {{ "~/.gitignore_global" | expanduser }}
@@ -10,7 +10,7 @@
 [fetch]
 	prune = true
 [push]
-	default = simple
+	default = nothing
 [alias]
 	amend = commit --amend --no-edit
 	brief = !git --no-pager log --decorate -n 25 --graph --oneline
