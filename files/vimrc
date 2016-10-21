@@ -24,12 +24,38 @@ if has("autocmd")
   autocmd Filetype java setlocal ts=4 sts=4 sw=4
   autocmd Filetype rust setlocal ts=4 sts=4 sw=4
 
+  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+  nmap ;c :lclose<CR>
+
   au BufRead,BufNewFile *.jelly set filetype=xml
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+  autocmd Filetype go nmap <C-l>d :GeDoc .<CR>
+  autocmd Filetype go nmap <C-l>i :GoImplements<CR>
+  autocmd Filetype go nmap <C-l>c :GoCallees<CR>
+  autocmd Filetype go nmap <C-l>r :GoReferrers<CR>
+  autocmd Filetype go nmap <C-t> :GoAlternate<CR>
+  autocmd Filetype go nmap <C-{> :lp<CR>
+  autocmd Filetype go nmap <C-}> :lne<CR>
   let g:go_fmt_command = "goimports"
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_generate_tags = 1
 endif
 
-nmap <C-n> :NERDTreeToggle<CR>
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+"nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :TagbarToggle<CR>
+inoremap <C-k> <Esc>
 
 execute pathogen#infect()
 syntax on

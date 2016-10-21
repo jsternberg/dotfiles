@@ -14,6 +14,7 @@
 [alias]
 	amend = commit --amend --no-edit
 	brief = !git --no-pager log --decorate -n 25 --graph --oneline
+	c = commit --no-verify
 	cached = diff --cached
 	co = checkout
 	cp = cherry-pick
@@ -30,7 +31,7 @@
 	pushf = push --force-with-lease
 	signoff = commit --amend --signoff
 	st = status
-	stat = status
+	stat = show --stat
 	tree = log --graph --oneline --decorate
 	undo = reset --hard
 [grep]
@@ -41,3 +42,5 @@
 	ff = only
 [git-up "rebase"]
 	auto = false
+[diff]
+	compactionHeuristic = true

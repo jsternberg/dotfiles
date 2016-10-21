@@ -35,6 +35,11 @@
         - git://github.com/tpope/vim-surround
         - git://github.com/vim-ruby/vim-ruby
 
+    - name: clone git-helpers
+      git:
+        repo: git://github.com/jsternberg/git-helpers
+        dest: '~/git-helpers'
+
     - name: copy .vimrc
       copy:
         src: files/vimrc

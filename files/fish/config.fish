@@ -20,6 +20,10 @@ set -x EDITOR vim
 
 # go
 set -x GOPATH $HOME/go
+alias go "env GOGC=off go"
+
+# docbook
+set -x XML_CATALOG_FILES /usr/local/etc/xml/catalog
 
 # add additional binary paths in a way that prevents them from being duplicated
-set fish_user_paths $GOPATH/bin
+set fish_user_paths $GOPATH/bin $HOME/git-helpers/bin
