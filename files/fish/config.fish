@@ -14,6 +14,11 @@ function fish_prompt
   set_color normal
 end
 
+function fish_user_key_bindings
+  # preserve old fish behavior of wiping out the line instead of creating a newline
+  bind \cc 'commandline ""'
+end
+
 alias git hub
 
 set -x EDITOR vim
