@@ -34,6 +34,7 @@
         - git://github.com/tpope/vim-markdown
         - git://github.com/tpope/vim-surround
         - git://github.com/vim-ruby/vim-ruby
+        - git://github.com/ctrlpvim/ctrlp.vim
 
     - name: clone git-helpers
       git:
