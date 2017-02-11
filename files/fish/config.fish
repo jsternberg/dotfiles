@@ -32,3 +32,7 @@ set -x XML_CATALOG_FILES /usr/local/etc/xml/catalog
 
 # add additional binary paths in a way that prevents them from being duplicated
 set fish_user_paths $GOPATH/bin $HOME/git-helpers/bin
+
+function jsfmt
+  cat $argv[1] | python -mjson.tool
+end
