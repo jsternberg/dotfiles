@@ -2,6 +2,37 @@
 - hosts: localhost
   gather_facts: yes
   tasks:
+    - name: update homebrew
+      homebrew:
+        update_homebrew: yes
+      when: ansible_distribution == 'MacOSX'
+
+    - name: install homebrew packages
+      homebrew:
+        name: '{{ item }}'
+      with_items:
+        - asciidoc
+        - autoconf
+        - automake
+        - cloc
+        - cmake
+        - docker
+        - docker-compose
+        - docker-machine
+        - dos2unix
+        - fish
+        - git
+        - hub
+        - jq
+        - mercurial
+        - protobuf
+        - sqlite
+        - the_silver_searcher
+        - tmux
+        - vim
+        - xmlto
+      when: ansible_distribution == 'MacOSX'
+
     - name: create ~/.vim directories
       file:
         path: '~/.vim/{{ item }}'
@@ -78,7 +109,7 @@
         state: directory
 
     - name: copy fish/config.fish
-      copy:
+      template:
         src: files/fish/config.fish
         dest: ~/.config/fish/config.fish
         backup: yes
