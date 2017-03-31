@@ -113,3 +113,15 @@
         src: files/fish/config.fish
         dest: ~/.config/fish/config.fish
         backup: yes
+
+    - name: create ~/.config/fish/completions directory
+      file:
+        path: ~/.config/fish/completions
+        state: directory
+
+    - name: copy custom fish completions
+      copy:
+        src: 'files/fish/{{ item }}'
+        dest: '~/.config/fish/completions/{{ item }}'
+      with_items:
+        - git.fish
