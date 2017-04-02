@@ -22,6 +22,7 @@
         - dos2unix
         - fish
         - git
+        - go
         - hub
         - jq
         - mercurial
@@ -102,6 +103,13 @@
         path: ~/go/bin
         recurse: yes
         state: directory
+
+    - name: install go tools
+      command: 'go get -u {{ item }}'
+      with_items:
+        - github.com/fatih/gomodifytags
+      environment:
+        GOPATH: '{{ ansible_env.HOME }}/go'
 
     - name: create ~/.config/fish directory
       file:
