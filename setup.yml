@@ -66,6 +66,7 @@
         - git://github.com/tpope/vim-surround
         - git://github.com/vim-ruby/vim-ruby
         - git://github.com/ctrlpvim/ctrlp.vim
+        - git://github.com/Valloric/YouCompleteMe
 
     - name: clone git-helpers
       git:
