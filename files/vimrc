@@ -31,6 +31,11 @@ if has("autocmd")
   au BufRead,BufNewFile *.jelly set filetype=xml
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+  augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  augroup END
+
   autocmd Filetype go nmap <C-l>d :GeDoc .<CR>
   autocmd Filetype go nmap <C-l>i :GoImplements<CR>
   autocmd Filetype go nmap <C-l>c :GoCallees<CR>

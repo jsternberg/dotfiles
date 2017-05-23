@@ -31,6 +31,7 @@
         - the_silver_searcher
         - tmux
         - vim
+        - watchman
         - xmlto
       when: ansible_distribution == 'MacOSX'
 
@@ -55,8 +56,10 @@
       with_items:
         - git://github.com/bronson/vim-trailing-whitespace
         - git://github.com/dagwieers/asciidoc-vim
+        - git://github.com/dcharbon/vim-flatbuffers
         - git://github.com/derekwyatt/vim-scala
         - git://github.com/fatih/vim-go
+        - git://github.com/jtratner/vim-flavored-markdown
         - git://github.com/honza/dockerfile.vim
         - git://github.com/leshill/vim-json
         - git://github.com/rust-lang/rust.vim
