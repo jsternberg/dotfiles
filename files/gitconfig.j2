@@ -24,6 +24,7 @@
 	ff = merge --ff-only
 	fuckit = !git reset --hard HEAD && git clean -df
 	logd = log --decorate
+	prune-tags = fetch --prune origin "+refs/tags/*:refs/tags/*"
 	ra = rebase --abort
 	rc = rebase --continue
 	reset-author = commit --reset-author --amend --no-edit
