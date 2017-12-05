@@ -10,7 +10,7 @@
 [fetch]
 	prune = true
 [push]
-	default = nothing
+	default = simple
 [alias]
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 	amend = commit --amend --no-edit
@@ -45,3 +45,5 @@
 	auto = false
 [diff]
 	compactionHeuristic = true
+[init]
+	templateDir = {{ "~/git-helpers/templates/hooks" | expanduser }}
