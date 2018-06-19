@@ -25,6 +25,7 @@ set -x EDITOR vim
 
 # go
 set -x GOPATH $HOME/go
+set -x DEPCACHEAGE 24h
 alias go "env GOGC=off go"
 
 # docbook
