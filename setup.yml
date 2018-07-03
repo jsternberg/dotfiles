@@ -31,9 +31,14 @@
         - sqlite
         - the_silver_searcher
         - tmux
-        - vim
         - watchman
         - xmlto
+      when: ansible_distribution == 'MacOSX'
+
+    - name: install vim
+      homebrew:
+        name: vim
+        install_options: with-python@2
       when: ansible_distribution == 'MacOSX'
 
     - name: create ~/.vim directories
