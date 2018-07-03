@@ -16,6 +16,7 @@
         - automake
         - cloc
         - cmake
+        - csvkit
         - docker
         - docker-compose
         - docker-machine
