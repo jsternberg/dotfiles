@@ -31,6 +31,9 @@ alias go "env GOGC=off go"
 # docbook
 set -x XML_CATALOG_FILES /usr/local/etc/xml/catalog
 
+# etcdctl should use api version 3 by default
+set -x ETCDCTL_API 3
+
 # add additional binary paths in a way that prevents them from being duplicated
 set fish_user_paths $GOPATH/bin $HOME/git-helpers/bin{% if ansible_distribution == 'MacOSX' %} /usr/local/opt/sqlite/bin{% endif %}
 
