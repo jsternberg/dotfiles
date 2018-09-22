@@ -39,7 +39,3 @@ alias kubeprod "kubectl --context=influx-internal"
 
 # add additional binary paths in a way that prevents them from being duplicated
 set fish_user_paths $GOPATH/bin $HOME/git-helpers/bin{% if ansible_distribution == 'MacOSX' %} /usr/local/opt/sqlite/bin{% endif %}
-
-function jsfmt
-  cat $argv[1] | python -mjson.tool
-end
